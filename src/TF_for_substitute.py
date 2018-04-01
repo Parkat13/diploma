@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
-import sys
 import time
 import codecs
 import pymorphy2
 morph = pymorphy2.MorphAnalyzer()
-reload(sys)
-sys.setdefaultencoding('utf-8')
 f_obuch = codecs.open('text.txt', 'r', 'utf8')
 f_ph = codecs.open('second_phrases.txt', 'r', 'utf8')
 f_finish = open('TF_substitute_words.txt', 'w')
@@ -15,7 +12,7 @@ words_group_normal = f_group.read().split()
 dict = {}
 dict_TF = {}
 dict_ph = {}
-for i in range(len(words_group_normal)/11):
+for i in range(len(words_group_normal)//11):
     dict[words_group_normal[i*11]] = set()
     dict_TF[words_group_normal[i * 11]]= 0
     for j in range(5):
@@ -24,6 +21,7 @@ for i in range(len(words_group_normal)/11):
 
 a = f_ph.readline().split()
 while len(a)!=0:
+    dict_ph[a[1] + ' ' + a[2]] = 0
     for j in dict[a[1]]:
         dict_ph[j + ' ' + a[2]] = 0
     for j in dict[a[2]]:
@@ -48,7 +46,7 @@ while len(words) != 0:
         if words[j] in dict_TF:
             dict_TF[words[j]] += 1
         str_nul = words[j]
-    print k, "--- %s seconds ---" % (time.time() - start_time)
+    print (k, "--- %s seconds ---" % (time.time() - start_time))
     k += 1
     if flag_last_word == 1:
         words_str = (words[-1] + ' ' + f_obuch.read(100000000).strip())
