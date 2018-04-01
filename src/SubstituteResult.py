@@ -9,10 +9,10 @@ f_res = open('resSubstituteCubicMI5.txt', 'w')
 a = f_data.read().split()
 dict = {}
 dict_res = {}
-for i in range(len(a)/3):
+for i in range(len(a)//3):
     dict[a[i*3] + ' ' + a[i*3+1]] = a[i*3+2]
 a = f_ph.read().split()
-for i in range(len(a)/4):
+for i in range(len(a)//4):
     dict_res[a[i*4] + ' ' + a[i*4+1] + ' ' + a[i*4+2]] = float(a[i*4+3]) - float(dict[a[i*4+1] + ' ' + a[i*4+2]])
 for i in sorted(dict_res, key=dict_res.__getitem__, reverse=True):
     f_res.write(str(i) + ' ' + str(dict_res[i]) + '\n')
