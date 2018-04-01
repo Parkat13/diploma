@@ -1,0 +1,6 @@
+for 'second_phrases.txt' MeanTF = 887.026054492 
+
+for 'SubstituteTFRes2.txt' MeanTF = 705.869652757
+for 'SubstituteTFRes3.txt' MeanTF = 730.029964126
+for 'SubstituteTFRes4.txt' MeanTF = 747.088765435
+for 'SubstituteTFRes5.txt' MeanTF = 759.190424425

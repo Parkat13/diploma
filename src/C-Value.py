@@ -4,15 +4,13 @@ import sys
 import codecs
 import pymorphy2
 morph = pymorphy2.MorphAnalyzer()
-reload(sys)
-sys.setdefaultencoding('utf-8')
 f_obuch = codecs.open('text.txt', 'r', 'utf8')
 f_finish = open('res_C-Value.txt', 'w')
 f_group = codecs.open('second_phrases.txt', 'r', 'utf8')
 words_group_normal = f_group.read().split()
 dict = {}
 dict_TF = {}
-for i in range(len(words_group_normal)/4):
+for i in range(int(len(words_group_normal)/4)):
     dict[words_group_normal[i*4+1] + ' ' + words_group_normal[i*4+2]] = {}
     dict_TF[words_group_normal[i * 4 + 1] + ' ' + words_group_normal[i * 4 + 2]] = words_group_normal[i*4 + 3]
 words_str = f_obuch.read(1000)
@@ -58,7 +56,7 @@ while len(words) != 0:
                     continue
                 dict[word_2 + ' ' + word_3][word_1 + ' ' + word_4] = 1
     if k%100000 == 0:
-        print k/100000
+        print (k/100000)
     #print k/100000, "--- %s seconds ---" % (time.time() - start_time)
     k += 1
     if flag_last_word == 1:
@@ -88,13 +86,17 @@ if (word_2 + ' ' + word_3) in dict:
             sd[word_1] = p
         if len(word_1.split()) == 1:
             dict[word_2 + ' ' + word_3][word_1 + ' '] = 1
-print 'end of file :)\n'
+print ('end of file :)\n')
 dict_res = {}
 for i in dict:
     res = float(dict_TF[i])
     s = 0.0
     for j in dict[i]:
+        if i == 'иностранный дело':
+            print(j + ' ' + str(dict[i][j]) + '\n')
         s += float(dict[i][j])
+    if i == 'иностранный дело':
+        print(str(s) + ' ' + str(len(dict[i])) + '\n')
     if len(dict[i]) == 0:
         dict_res[i] = res
     else:
@@ -104,3 +106,4 @@ for i in sorted(dict_res, key=dict_res.__getitem__, reverse=True):
 f_obuch.close()
 f_finish.close()
 f_group.close()
+
