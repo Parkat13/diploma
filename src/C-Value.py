@@ -5,8 +5,8 @@ import codecs
 import pymorphy2
 morph = pymorphy2.MorphAnalyzer()
 f_obuch = codecs.open('text.txt', 'r', 'utf8')
-f_finish = open('res_C-Value.txt', 'w')
-f_group = codecs.open('second_phrases.txt', 'r', 'utf8')
+f_finish = open('min_res_C-Value.txt', 'w')
+f_group = codecs.open('phrases(200,250).txt', 'r', 'utf8')
 words_group_normal = f_group.read().split()
 dict = {}
 dict_TF = {}

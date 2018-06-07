@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 import codecs
-t1 = 'C-Value'
-t2 = 'WordsWord2vec'
+t1 = 'Word2vec'
+t2 = 'LLR'
 f_1 = [codecs.open('TRang' + t1 + '.txt', 'r', 'utf8'), codecs.open('NRang' + t1 + '.txt', 'r', 'utf8')]
 f_2 = [codecs.open('TRang' + t2 + '.txt', 'r', 'utf8'), codecs.open('NRang' + t2 + '.txt', 'r', 'utf8')]
-f_3 = [codecs.open('TRangSinonim.txt', 'r', 'utf8'), codecs.open('NRangSinonim.txt', 'r', 'utf8')]
+f_3 = [codecs.open('TRangSinonim(only_T).txt', 'r', 'utf8'), codecs.open('NRangSinonim(only_T).txt', 'r', 'utf8')]
 #f_res12 = open('resWord2vec+WordsWord2vec.txt', 'w')
-f_res13 = open('resSumRang' + t1 + '+Sinonim.txt', 'w')
-f_res23 = open('resSumRang' + t2 + '+Sinonim.txt', 'w')
+f_res13 = open('resSumRang' + t1 + '+Sinonim(only_T).txt', 'w')
+f_res23 = open('resSumRang' + t2 + '+Sinonim(only_T).txt', 'w')
 #f_res123 = open('resWord2vec+WordsWord2vec+Sinonim.txt', 'w')
 fl = ['T', 'N']
 dict = [{}, {}, {}]

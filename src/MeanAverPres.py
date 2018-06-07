@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import codecs
-for str0 in ['SubstituteMI5', 'SubstituteMI4', 'SubstituteMI3', 'SubstituteMI2']:
-    f = codecs.open('res' + str0 + '.txt', 'r', 'utf8')
+for str0 in ['']:
+    f = codecs.open('min_resSinonimFinish(only_T)' + str0 + '.txt', 'r', 'utf8')
 #f_g = codecs.open('second_phrases.txt', 'r', 'utf8')
-    f_t = open('TMap' + str0 + '.txt', 'w')
-    f_n = open('NMap' + str0 + '.txt', 'w')
+    f_t = open('min_TMapSinonim(only_T)' + str0 + '.txt', 'w')
+    f_n = open('min_NMapSinonim(only_T)' + str0 + '.txt', 'w')
     a = f.read().split()
 #b = f_g.read().split()
 #dict = {}

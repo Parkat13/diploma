@@ -1,16 +1,13 @@
 # -*- coding: utf-8 -*-
-import sys
 import codecs
 import pymorphy2
 morph = pymorphy2.MorphAnalyzer()
-reload(sys)
-sys.setdefaultencoding('utf-8')
 list_f = ['Abbr', 'Name', 'Surn', 'Patr', 'Geox', 'Orgn', 'Trad', 'Erro', 'Init']
 f_freq = codecs.open('freq_last.txt', 'r', 'utf8')
 f_finish = open('freq_last_per.txt', 'w')
 freq = f_freq.read().lower().split()
-for i in range(len(freq) / 3):
-    if int(freq[3 * i + 2]) < 200:
+for i in range(len(freq) // 3):
+    if (int(freq[3 * i + 2]) < 200) or (int(freq[3 * i + 2]) > 250):
         break
     p1 = morph.parse(freq[i * 3])[0]
     p2 = morph.parse(freq[i * 3 + 1])[0]
