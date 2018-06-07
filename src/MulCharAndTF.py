@@ -6,9 +6,9 @@ dict = {}
 a = f_data.read().split()
 for i in range(len(a)//4):
     dict[a[4 * i] + ' ' + a[4 * i + 1] + ' ' + a[4 * i + 2]] = a[4 * i + 3]
-for str0 in ['Word2vec', 'WordsWord2vec']:
-    f = codecs.open('second_res' + str0 + '.txt', 'r', 'utf8')
-    f_t = open('second_reslogTF+' + str0 + '.txt', 'w')
+for str0 in ['']:
+    f = codecs.open('second_resSinonimFinish(only_T)' + str0 + '.txt', 'r', 'utf8')
+    f_t = open('second_reslogTF+Sinonim(only_T)' + str0 + '.txt', 'w')
     a = f.read().split()
     res = {}
     for i in range(len(a)//4):
